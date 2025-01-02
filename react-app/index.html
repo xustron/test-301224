@@ -10,5 +10,20 @@
     <div id="XU"></div>
     <script type="module" src="/src/main.jsx"></script>
 
+
+    <script>
+      // ТЕСТ ЗАГРУЗЧИКА
+      let loader = document.body;
+      let current = 0;
+      let intervalId = setInterval(() => {
+        if (current === 100) {
+          clearInterval(intervalId);
+          return;
+        }
+        current = Math.min(current + Math.random() * (100 - current), 100);
+        loader.dataset.loader = current.toFixed(0);
+      }, Math.random() * (1000 - 50) + 50);
+      
+    </script>
   </body>
 </html>
