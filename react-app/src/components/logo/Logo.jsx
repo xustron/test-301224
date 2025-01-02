@@ -2,16 +2,12 @@ import style from './Logo.module.css'
 
 const logo = [
     {
-        src: '/logo/logo.png',
+        src: '/logo/logo_1.png',
         alt: '1'
     },
     {
-        src: '/logo/logo.png',
-        alt: '1'
-    },
-    {
-        src: '/logo/logo.png',
-        alt: '1'
+        src: '/logo/logo_2.png',
+        alt: '2222'
     },
 ];
 

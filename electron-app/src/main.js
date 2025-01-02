@@ -11,7 +11,6 @@ const settings = {
 let win, preloadWin;
 
 function createWindow() {
-
   win = new BrowserWindow({
     show: false,
     title: settings.title,
@@ -22,7 +21,7 @@ function createWindow() {
     },
   });
   win.setMenuBarVisibility(false);
-  win.loadURL("http://localhost:3000/");
+  win.loadURL("http://localhost:5000/");
 
   loader(win, settings);
 
