@@ -1,0 +1,43 @@
+.menuBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.menuBar__main {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 65%;
+  background: linear-gradient(transparent, rgb(36 36 38 / 70%) 20%);
+  box-shadow: 0px 30px 6px -2px rgb(0 0 0 / 20%);
+}
+
+.menuBar__main hr {
+  height: 2px;
+  background: rgb(255 255 255 / 25%);
+  margin: 0;
+  border: none;
+  box-shadow: -1px 1px 4px 1px #000;
+  opacity: 0.2;
+}
+
+.menuBar__item {
+  width: 100px;
+  height: 100px;
+  /* background: #fff; */
+}
+
+.menuBar__item:hover {
+  background: #8f8f8f;
+  cursor: pointer;
+}
+
+.menuBar__item.active {
+  background: #8f8f8f;
+}
