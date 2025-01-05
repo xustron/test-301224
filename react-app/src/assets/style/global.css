@@ -1,3 +1,7 @@
+:root {
+  --index: calc(1vw + 1vh);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +16,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: #1d1b21; */
-  background: linear-gradient(14deg, #1d1b21 20%, #ffffff00),
+  /* background: linear-gradient(14deg, #1d1b21 20%, #ffffff00),
+    linear-gradient(0deg, #1f1d20 30%, #ffffff00),
+    linear-gradient(180deg, #0a0a18 0%, #ffffff00),
+    linear-gradient(123deg, #ff5500 9%, #ffffff00),
+    linear-gradient(285deg, #003aff 28%, #ffffff00); */
+  background: linear-gradient(14deg, #242329 20%, #ffffff00),
     linear-gradient(0deg, #1f1d20 30%, #ffffff00),
     linear-gradient(180deg, #0a0a18 0%, #ffffff00),
     linear-gradient(123deg, #ff5500 9%, #ffffff00),

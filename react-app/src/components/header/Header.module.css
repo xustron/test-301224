@@ -1,0 +1,17 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+  display: flex;
+}
+
+.header__logo {
+  height: calc(var(--index) * 3.3);
+  position: relative;
+  padding: calc(var(--index) * 0.3) 0 0 calc(var(--index) * 0.3);
+}
+
+.header__logo img {
+  height: 100%;
+}
