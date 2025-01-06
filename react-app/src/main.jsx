@@ -8,7 +8,6 @@ import "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/free-brands-svg-icons";
 
-import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/style/global.css";
 import Home from "./screens/Home/Home";
