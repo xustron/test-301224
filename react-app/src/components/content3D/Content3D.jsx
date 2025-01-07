@@ -1,5 +1,6 @@
 import style from "./Content3D.module.css";
 import ThreeJs from "../threeJs/ThreeJs";
+import "../threeJs/ThreeJsTemp";
 
 const Content3D = () => {
   return (

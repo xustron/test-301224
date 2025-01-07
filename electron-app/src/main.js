@@ -26,7 +26,7 @@ function createWindow() {
   loader(win, settings);
 
   // preloadWin.webContents.openDevTools();
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 }
 
 app.on("ready", () => {
