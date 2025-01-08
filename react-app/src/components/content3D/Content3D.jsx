@@ -7,7 +7,7 @@ const Content3D = () => {
     <div className={style.content3D}>
       <div id="content3D_scene" className={style.content3D__img}>
         <div className={style.content3D__ambilight}>
-          <img src="img/scene/orig.webp" className={style.content3D__image} />
+          {/* <img src="img/scene/orig.webp" className={style.content3D__image} /> */}
           <img src="img/scene/orig.webp" className={style.content3D__light} />
         </div>
       </div>
