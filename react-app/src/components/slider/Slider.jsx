@@ -5,7 +5,7 @@ import "../../assets/libs/swiper/swiper-bundle.min.js";
 import "../../assets/libs/swiper/swiper-bundle.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Slider = () => {
+const Slider = ({ setIdObject }) => {
   useEffect(() => {
     const showSlider = new Swiper("#item-slider", settingsSlider);
   }, []);
@@ -15,7 +15,11 @@ const Slider = () => {
       <div className={style.swiper_container} id="item-slider">
         <div className="swiper-wrapper">
           {dataSlider.map((item, index) => (
-            <div className={`${style.slider_swiper} swiper-slide`} key={index}>
+            <div
+              className={`${style.slider_swiper} swiper-slide`}
+              key={index}
+              onClick={() => setIdObject(item.model)}
+            >
               <div className={style.slider__item}>
                 <div className={style.slider__item__img}>
                   <img src={item.img} alt={item.title} />

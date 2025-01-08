@@ -2,7 +2,7 @@ import style from "./Content3D.module.css";
 import ThreeJs from "../threeJs/ThreeJs";
 import "../threeJs/ThreeJsTemp";
 
-const Content3D = () => {
+const Content3D = ({ idObject }) => {
   return (
     <div className={style.content3D}>
       <div id="content3D_scene" className={style.content3D__img}>
@@ -12,7 +12,7 @@ const Content3D = () => {
         </div>
       </div>
       <div id="content3D_view" className={style.content3D__view}>
-        <ThreeJs></ThreeJs>
+        <ThreeJs idObject={idObject}></ThreeJs>
       </div>
 
       <div id="content3D_description" className={style.content3D__text}>

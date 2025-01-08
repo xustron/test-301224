@@ -25,23 +25,21 @@ import { a } from "@react-spring/three";
 
 import { useControls } from "leva";
 
-export default function App() {
-  // const modelCosole = useControls({
-  //   positionX: { value: 0, min: -80, max: 80, step: 0.1 },
-  //   positionY: { value: 0, min: -80, max: 80, step: 0.1 },
-  //   positionZ: { value: 0, min: -80, max: 80, step: 0.1 },
-  //   scale: { value: 1, min: 0, max: 20, step: 0.1 },
-  //   rotationX: { value: 0, min: -20, max: 20, step: 0.1 },
-  //   rotationY: { value: 0.86, min: -20, max: 20, step: 0.1 },
-  //   rotationZ: { value: 0, min: -20, max: 20, step: 0.1 },
-  // });
-
+export default function App({ idObject }) {
   // const modelCosole = useControls({
   //   positionX: { value: 0, min: -80, max: 80, step: 0.1 },
   //   positionY: { value: 6, min: -80, max: 80, step: 0.1 },
   //   positionZ: { value: 5, min: -80, max: 80, step: 0.1 },
   //   scale: { value: 5, min: 0, max: 200, step: 0.1 },
   // });
+
+  const models = {
+    glassBox: useGLTF("/models/glassBox/glassBox.gltf"),
+    amfora: useGLTF("/models/amfora/amfora.gltf"),
+    box: useGLTF("/models/box/box.gltf"),
+    stend: useGLTF("/models/stend/stend.gltf"),
+  };
+  console.log(models["glassBox"]);
 
   return (
     <Canvas shadows camera={{ position: [0, 0, 75], fov: 45 }}>
@@ -67,21 +65,35 @@ export default function App() {
       <group position={[0, -21, 0]} rotation={[0, 0, 0]} scale={1}>
         <group position={[50, 0, 0]} rotation={[0, 0.86, 0]}>
           <ModelGLTF
-            modelUrl="/models/glassBox/glassBox.gltf"
+            model={models.glassBox}
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
             scale={[0.9, 0.95, 0.9]}
           >
+            {idObject == "amfora" && (
+              <ModelGLTF
+                model={models.amfora} //"/models/amfora/amfora.gltf"
+                position={[0, 6, 0]}
+                rotation={[0, 0, 0]}
+                scale={8}
+                aRotation={true}
+                aRotationSpeed={0.008}
+                onClick={(e) => console.log(e)}
+              />
+            )}
+            {idObject == "box" && (
+              <ModelGLTF
+                model={models.box}
+                position={[0, 6, 0]}
+                rotation={[0, 0, 0]}
+                scale={10}
+                aRotation={true}
+                aRotationSpeed={0.004}
+              />
+            )}
+
             <ModelGLTF
-              modelUrl="/models/amfora/amfora.gltf"
-              position={[0, 6, 0]}
-              rotation={[0, 0, 0]}
-              scale={8}
-              aRotation={true}
-              aRotationSpeed={0.008}
-            ></ModelGLTF>
-            <ModelGLTF
-              modelUrl="/models/stend/stend.gltf"
+              model={models.stend}
               position={[0, 0, 0]}
               rotation={[0, 0, 0]}
               scale={[14, 7, 11]}
@@ -140,7 +152,7 @@ export default function App() {
 }
 
 function ModelGLTF({
-  modelUrl,
+  model,
   children,
   aRotation = false,
   aRotationSpeed = 0.01,
@@ -153,7 +165,7 @@ function ModelGLTF({
       mesh.current.rotation.y += aRotationSpeed;
     }
   });
-  const { scene, nodes, materials } = useGLTF(modelUrl);
+  const { scene, nodes, materials } = model;
   scene.traverse(
     (obj) =>
       obj.type === "Mesh" &&
