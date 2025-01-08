@@ -57,12 +57,12 @@ export default function App() {
       {/* <CameraControls /> */}
       {/* <LightHelpers /> */}
       <Environment files="/env/ballroom_4k.hdr" blur={1} />
-      {/* <mesh position={[78, 15, -52]} rotation={[0, 0, 0]} scale={[8.5, 8.5, 1]}>
+      <mesh position={[78, 15, -52]} rotation={[0, 0, 0]} scale={[8.5, 8.5, 1]}>
         <planeGeometry args={[16, 9]} />
         <meshBasicMaterial
-          map={useLoader(THREE.TextureLoader, "/img/scene/Screenshot_3.png")}
+          map={useLoader(THREE.TextureLoader, "/img/scene/orig.webp")}
         />
-      </mesh> */}
+      </mesh>
 
       <group position={[0, -21, 0]} rotation={[0, 0, 0]} scale={1}>
         <group position={[50, 0, 0]} rotation={[0, 0.86, 0]}>
